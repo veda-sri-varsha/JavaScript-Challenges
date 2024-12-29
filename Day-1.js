@@ -6,8 +6,8 @@ console.log(a) // Output : 10
 
 /* Task 2: Declare a variable using `let, assign it a string, and log the value to the console. */
 
-let b = "Veda Sri Varsha"
-console.log(b) // Output : Veda Sri Varsha
+let b = "Hello World"
+console.log(b) // Output : Hello World
 
 /* Activity 2: Constant Declaration */
 /* Task 3: Declare a variable using const , assign it a boolean value, and log the value to the console. */
