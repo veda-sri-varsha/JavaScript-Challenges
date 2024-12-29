@@ -60,9 +60,9 @@ console.log(am) // Output - TypeError: Assignment to constant variable.
 /*  Variable Types Console Log: Write a script that declares variables of different data types and logs both the value and type of each variable to the console. */
 /* Reasignment Demo: Create a script that demonstrates the difference in behavior between let and const when it comes to reassignment. */
 
-// let - has the new scope which can change to new value wshen reassigning , 
+// let - has the new scope which can change to new value when reassigning 
 // var - its also changining when reassigning in a global scope 
-// const - it has block scope , so i has the strict behaviour the reassignation value wont change accordingly ! - Type Error
+// const - it has block scope , so i has the strict behaviour the reassignation value wont change accordingly in result - Type Error
 
 
 
