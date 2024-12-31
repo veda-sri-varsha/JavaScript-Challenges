@@ -89,3 +89,4 @@ if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
 // Day of the Week Script: Write a script that uses a switch case to determine the day of the week based on a number (1-7) and logs the day name.
 // Grade Assignment Script: Create a script that uses a switch case to assign a grade based on a score and logs the grade.
 // Leap Year Check Script: Write a script that checks if a year is a leap year using multiple conditions and logs the result.
+// Tasks -Done
