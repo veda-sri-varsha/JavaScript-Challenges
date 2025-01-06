@@ -14,3 +14,5 @@
 #### Post - 6 : <a href= "https://www.linkedin.com/posts/veda-sri-varsha-kura_javascriptmastery-arraysinaction-codewithme-activity-7281300852504469504-SUsB?utm_source=share&utm_medium=member_desktop"> Link </a>
 
 #### Post - 7 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_learntocode-30daysofcode-buildinpublic-activity-7281663238625284096-pob_?utm_source=share&utm_medium=member_desktop"> Link </a>
+
+#### Post - 8 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_learntocode-30daysofcode-javascriptlearning-activity-7282025783668158464-i13Z?utm_source=share&utm_medium=member_desktop"> Link </a>
