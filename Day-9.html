@@ -1,194 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 9: DOM Manipulation</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f9;
-      color: #333;
-      padding: 20px;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9: DOM Manipulation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
 
-    h1 {
-      text-align: center;
-      color: #007acc;
-    }
+        h1 {
+            text-align: center;
+            color: #007acc;
+        }
 
-    .myClass {
-      background-color: lightgray;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 5px;
-      font-style: italic;
-    }
+        .myClass {
+            background-color: lightgray;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
 
-    .newClass {
-     color: blue;
-     font-weight: bold;
-    }
+        .newClass {
+            color: blue;
+            font-weight: bold;
+        }
 
-    .hoverElement {
-      border: 2px solid black;
-      padding: 10px;
-      margin-top: 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.3s ease;
-    }
+        .hoverElement {
+            border: 2px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
 
-    ul li {
-      margin: 5px 0;
-      padding: 10px;
-      background: #e0e7ff;
-      border-radius: 5px;
-    }
+        ul li {
+            margin: 5px 0;
+            padding: 10px;
+            background: #e0e7ff;
+            border-radius: 5px;
+        }
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007acc;
-      color: #fff;
-      cursor: pointer;
-      margin: 10px;
-    }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: #fff;
+            cursor: pointer;
+            margin: 10px;
+        }
 
-    button:hover {
-      background-color: #005f99;
-    }
-
-  </style>
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Day 9: DOM Manipulation</h1>
+    <h1>Day 9: DOM Manipulation</h1>
 
-  <!-- Task 1 -->
+    <h2 id="myElement">Hello, DOM!</h2>
+    <button onclick="text()">Change Text</button>
 
-  <h2 id="myElement">Hello, DOM!</h2>
-  <button onclick="text()">Change Text</button>
+    <div class="myClass">This is a div styled with the class "myClass".</div>
 
-  <!-- Task 2 -->
+    <button id="createDivButton">Create and Append Div</button>
 
-  <div class="myClass">This is a div styled with the class "myClass".</div>
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
 
-  <!-- Task 3 -->
+    <div id="elementToRemove">This element will be removed dynamically.</div>
 
- <button id="createDivButton">Create and Append Div</button>
+    <div id="parentElement">
+        <p>Child Element 1</p>
+        <p>Child Element 2</p>
+        <p>Child Element 3</p>
+    </div>
 
-  <!-- Task 4 -->
+    <a id="myLink" href="https://google.com">Google</a>
+    <button id="changeLinkBtn">Change Link</button>
 
-  <ul>
-    <li>List Item 1</li>
-    <li>List Item 2</li>
-    <li>List Item 3</li>
-  </ul>
+    <div class="Class-1">Text Color changes.</div>
+    <button id="toggleClassButton"> CSS Color</button>
 
-  <!-- Task 5 -->
+    <button id="changeParaButton">Click Me!</button>
+    <p class="para">Changed Text!.</p>
 
-  <div id="elementToRemove">This element will be removed dynamically.</div>
+    <div class="hoverElement">Hover over this box!</div>
 
-  <!-- Task 6 -->
+    <script>
 
-  <div id="parentElement">
-    <p>Child Element 1</p>
-    <p>Child Element 2</p>
-    <p>Child Element 3</p>
-  </div>
+        /* Activity 1: Selecting and Manipulating Elements */
+        /* Task 1: Select an HTML element by its ID and change its text content. */
 
-  <!-- Task 7 -->
+        function text() {
+            document.getElementById('myElement').textContent = 'New Text Content';
+        }
 
-  <a id="myLink" href="https://google.com">Google</a>
-  <button id="changeLinkBtn">Change Link</button>
+        /* Task 2: Select an HTML element by its class and change its background color. */
 
-  <!--Task 8 -->
-  
-  <div class="Class-1">Text Color changes.</div>
-<button id="toggleClassButton"> CSS Color</button>
+        document.querySelector('.myClass').style.backgroundColor = 'teal';
 
-  <!-- Task 9 -->
+        /* Activity 2: Creating and Appending Elements */
+        /* Task 3: Create a new div element with some text content and append it to the body. */
 
-  <button id="changeParaButton">Click Me!</button>
-  <p class="para">Changed Text!.</p>
+        document.getElementById('createDivButton').addEventListener('click', function () {
+            const newDiv = document.createElement('div');
+            newDiv.textContent = 'Hello, this is a new div!';
+            document.body.appendChild(newDiv);
+        });
 
-  <!-- Task 10 -->
+        /* Task 4: Create a new li element and add it to an existing ul list. */
 
-  <div class="hoverElement">Hover over this box!</div>
+        const newListItem = document.createElement('li');
+        newListItem.textContent = 'New List Item';
+        document.querySelector('ul').appendChild(newListItem);
 
-  <script>
-    
-/* Activity 1: Selecting and Manipulating Elements */
-/* Task 1: Select an HTML element by its ID and change its text content. */
+        /* Activity 3: Removing Elements */
+        /* Task 5: Select an HTML element and remove it from the DOM. */
 
-function text() {
-    document.getElementById('myElement').textContent = 'New Text Content';
-}
+        const elementToRemove = document.getElementById('elementToRemove');
+        elementToRemove.parentNode.removeChild(elementToRemove);
 
-/* Task 2: Select an HTML element by its class and change its background color. */
+        /* Task 6: Remove the last child of a specific HTML element. */
 
-  document.querySelector('.myClass').style.backgroundColor = 'teal';
+        document.querySelector('ul').lastElementChild.remove();
 
-/* Activity 2: Creating and Appending Elements */
-/* Task 3: Create a new div element with some text content and append it to the body. */
+        /* Activity 4: Modifying Attributes and Classes */
+        /* Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag). */
 
-document.getElementById('createDivButton').addEventListener('click', function() {
-    const newDiv = document.createElement('div');
-    newDiv.textContent = 'Hello, this is a new div!';
-    document.body.appendChild(newDiv);
-  });
+        document.getElementById('changeLinkBtn').onclick = function () {
+            document.getElementById('myLink').setAttribute('href', 'https://github.com');
+        };
 
-/* Task 4: Create a new li element and add it to an existing ul list. */
+        /* Task 8: Add and remove a CSS class to/from an HTML element. */
 
-const newListItem = document.createElement('li');
-newListItem.textContent = 'New List Item';
-document.querySelector('ul').appendChild(newListItem);
+        document.getElementById('toggleClassButton').addEventListener('click', function () {
+            const element = document.querySelector('.Class-1');
+            element.classList.toggle('newClass');
+        });
 
-/* Activity 3: Removing Elements */
-/* Task 5: Select an HTML element and remove it from the DOM. */
+        /* Activity 5: Event Handling */
+        /* Task 9: Add a click event listener to a button that changes the text content of a paragraph. */
 
-const elementToRemove = document.getElementById('elementToRemove');
-elementToRemove.parentNode.removeChild(elementToRemove);
+        document.getElementById('changeParaButton').addEventListener('click', () => {
+            document.querySelector('.para').textContent = 'Text Changed! Hello World';
+        });
 
-/* Task 6: Remove the last child of a specific HTML element. */
+        /* Task 10: Add a mouseover event listener to an element that changes its border color. */
 
-document.querySelector('ul').lastElementChild.remove();
+        document.querySelector('.hoverElement').addEventListener('mouseover', () => {
+            document.querySelector('.hoverElement').style.borderColor = 'blue';
+        });
 
-/* Activity 4: Modifying Attributes and Classes */
-/* Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag). */
-
-document.getElementById('changeLinkBtn').onclick = function() {
-    document.getElementById('myLink').setAttribute('href', 'https://github.com');
-  };
-
-/* Task 8: Add and remove a CSS class to/from an HTML element. */
-
-document.getElementById('toggleClassButton').addEventListener('click', function() {
-    const element = document.querySelector('.Class-1');
-    element.classList.toggle('newClass');
-  });
-
-/* Activity 5: Event Handling */
-/* Task 9: Add a click event listener to a button that changes the text content of a paragraph. */
-
-document.getElementById('changeParaButton').addEventListener('click', () => {
-    document.querySelector('.para').textContent = 'Text Changed! Hello World';
-  });
-
-/* Task 10: Add a mouseover event listener to an element that changes its border color. */
-
-document.querySelector('.hoverElement').addEventListener('mouseover', () => {
-  document.querySelector('.hoverElement').style.borderColor = 'blue';
-});
-
-  </script>
+    </script>
 </body>
+
 </html>
