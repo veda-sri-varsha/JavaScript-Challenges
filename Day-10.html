@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 10: Event Handling</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+        margin: 0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #007acc;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .hoverElement {
+        border: 2px solid black;
+        padding: 10px;
+        margin-top: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      ul li {
+        margin: 5px 0;
+        padding: 10px;
+        background: #e0e7ff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007acc;
+        color: #fff;
+        cursor: pointer;
+        margin: 10px;
+      }
+
+      button:hover {
+        background-color: #005f99;
+      }
+
+      input {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: calc(100% - 24px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Day 10: Event Handling</h1>
+
+    <button id="changeTextButton">Change Paragraph Text</button>
+    <p id="textParagraph">This is the original text.</p>
+
+    <img
+      id="toggleImage"
+      src="images (1).jpg"
+      alt="Placeholder Image"
+    />
+    <button id="toggleImageButton">Toggle Image Visibility</button>
+
+    <div class="hoverElement">Hover over me!</div>
+
+    <input id="keyLogger" type="text" placeholder="Type something here..." />
+    <p id="keyOutput">Key pressed will appear here.</p>
+
+    <form id="myForm">
+      <input type="text" name="username" placeholder="Enter your name" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <select id="dropdown">
+      <option value="Option 1">Option 1</option>
+      <option value="Option 2">Option 2</option>
+      <option value="Option 3">Option 3</option>
+    </select>
+    <p id="selectedOption">Selected option will appear here.</p>
+
+    <ul id="clickableList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <button id="addDynamicItem">Add Dynamic List Item</button>
+    <ul id="dynamicList"></ul>
+
+    <script>
+      /* Activity 1: Basic Event Handling */
+      /* Task 1: Change paragraph text on button click */
+      
+      document
+        .getElementById("changeTextButton")
+        .addEventListener("click", () => {
+          document.getElementById("textParagraph").textContent =
+            "The text has been changed!";
+        });
+
+      /* Task 2: Toggle image visibility on button double-click */
+
+      document
+        .getElementById("toggleImageButton")
+        .addEventListener("dblclick", () => {
+          const img = document.getElementById("toggleImage");
+          img.classList.toggle("hidden");
+        });
+
+      /* Activity 2: Mouse Events */
+      /* Task 3 & Task 4: Mouseover and mouseout to change background color */
+
+      const hoverElement = document.querySelector(".hoverElement");
+      hoverElement.addEventListener("mouseover", () => {
+        hoverElement.style.backgroundColor = "lightblue";
+      });
+      hoverElement.addEventListener("mouseout", () => {
+        hoverElement.style.backgroundColor = "";
+      });
+
+      /* Activity 3: Keyboard Events */
+      /* Task 5: Log key pressed to console */
+
+      document.getElementById("keyLogger").addEventListener("keydown", (e) => {
+        console.log(`Key pressed: ${e.key}`);
+      });
+
+      /* Task 6: Display current value in a paragraph */
+
+      document.getElementById("keyLogger").addEventListener("keyup", (e) => {
+        document.getElementById(
+          "keyOutput"
+        ).textContent = `You typed: ${e.target.value}`;
+      });
+
+      /* Activity 4: Form Events */
+      /* Task 7: Prevent form submission and log form data */
+
+      document.getElementById("myForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        console.log(Object.fromEntries(formData.entries()));
+      });
+
+      /* Task 8: Display selected dropdown value */
+
+      document.getElementById("dropdown").addEventListener("change", (e) => {
+        document.getElementById(
+          "selectedOption"
+        ).textContent = `Selected: ${e.target.value}`;
+      });
+
+      /* Activity 5: Event Delegation */
+      /* Task 9: Log clicked list item text */
+
+      document
+        .getElementById("clickableList")
+        .addEventListener("click", (e) => {
+          if (e.target.tagName === "LI") {
+            console.log(`Clicked on: ${e.target.textContent}`);
+          }
+        });
+
+      /* Task 10: Handle events for dynamically added elements */
+
+      document
+        .getElementById("addDynamicItem")
+        .addEventListener("click", () => {
+          const newItem = document.createElement("li");
+          newItem.textContent = `Dynamic Item ${
+            document.getElementById("dynamicList").children.length + 1
+          }`;
+          document.getElementById("dynamicList").appendChild(newItem);
+        });
+
+      document.getElementById("dynamicList").addEventListener("click", (e) => {
+        if (e.target.tagName === "LI") {
+          console.log(`Dynamic List Item Clicked: ${e.target.textContent}`);
+        }
+      });
+
+    </script>
+  </body>
+</html>
