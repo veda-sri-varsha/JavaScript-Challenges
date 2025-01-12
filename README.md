@@ -24,3 +24,7 @@
 #### Post - 11 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_learntocode-30daysofcode-buildinpublic-activity-7283148157444599809-qJcN?utm_source=share&utm_medium=member_desktop"> Link </a>
 
 #### Post - 12 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_learntocode-30daysofcode-buildinpublic-activity-7283631471129513984-n0aR?utm_source=share&utm_medium=member_desktop" > Link </a>
+
+#### Post - 13 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_javascript-webdevelopment-programming-activity-7283927557471645696-K_yB?utm_source=share&utm_medium=member_desktop" > Link </a>
+
+#### Post - 14 : <a href= "https://www.linkedin.com/posts/veda-sri-varsha-kura_javascript-webdevelopment-programming-activity-7284211509382074369-2-vL?utm_source=share&utm_medium=member_desktop"> Link </a>
