@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding of LocalStorage and SessionStorage</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LocalStorage and SessionStorage</h1>
+
+    <h2>LocalStorage Form</h2>
+    <form id="localStorageForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <button type="submit">Save to LocalStorage</button>
+    </form>
+    <div id="localStorageData"></div>
+
+    <h2>SessionStorage Form</h2>
+    <form id="sessionStorageForm">
+      <label for="sessionName">Name:</label>
+      <input type="text" id="sessionName" name="sessionName" required />
+      <label for="sessionEmail">Email:</label>
+      <input type="email" id="sessionEmail" name="sessionEmail" required />
+      <button type="submit">Save to SessionStorage</button>
+    </form>
+    <div id="sessionStorageData"></div>
+
+    <script>
+      /* Activity 1: Understanding LocalStorage */
+      /* Task 1: Save and Retrieve a String Value: Write a script to save a string value to localStorage and retrieve it.Log the retrieved value.*/
+
+      localStorage.setItem("word", "Hello,  Programmer!");
+      console.log(localStorage.getItem("word"));
+
+      /* Task 2: Save and Retrieve an Object: Write a script to save an object to localStorage by converting it to a JSON string.Retrieve and parse the object, then log it. */
+
+      const user1 = {
+        name: "John Doe",
+        age: 30,
+      };
+
+      localStorage.setItem("user1", JSON.stringify(user1));
+      const retrievedUser = JSON.parse(localStorage.getItem("user1"));
+
+      /* Activity 2: Using LocalStorage */
+      /*Task 3: Save User Input to LocalStorage: Create a simple form that saves user input (e.g., name and email) to localStorage when submitted.Retrieve and display the saved data on page load. */
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("#localStorageForm");
+        const nameInput = document.querySelector("#name");
+        const emailInput = document.querySelector("#email");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = nameInput.value;
+          const email = emailInput.value;
+          localStorage.setItem("name", name);
+          localStorage.setItem("email", email);
+          displayLocalStorageData();
+        });
+
+        const displayLocalStorageData = () => {
+          const name = localStorage.getItem("name");
+          const email = localStorage.getItem("email");
+          if (name && email) {
+            document.querySelector(
+              "#localStorageData"
+            ).textContent = `Name: ${name}, Email: ${email}`;
+          }
+        };
+
+        displayLocalStorageData();
+      });
+
+      /* Task 4: Remove an Item from LocalStorage: Write a script to remove an item from localStorage.Log the localStorage content before and after removal. */
+
+      localStorage.setItem("itemToRemove", " removed");
+      console.log("Before removal:", localStorage.getItem("itemToRemove"));
+      localStorage.removeItem("itemToRemove");
+      console.log("After removal:", localStorage.getItem("itemToRemove"));
+
+      /* Activity 3: Understanding SessionStorage */
+      /* Task 5: Save and Retrieve a String Value: Write a script to save a string value to sessionStorage and retrieve it.Log the retrieved value.*/
+
+      sessionStorage.setItem("Name", "Hello, World!");
+      console.log(sessionStorage.getItem("Name"));
+
+      /* Task 6: Save and Retrieve an Object: Write a script to save an object to sessionStorage by converting it to a JSON string.Retrieve and parse the object, then log it.*/
+
+      const user2 = {
+        username: "JaneDoe",
+        logIn: true,
+      };
+
+      sessionStorage.setItem("user2", JSON.stringify(user2));
+      const retriveUser = JSON.parse(sessionStorage.getItem("user2"));
+
+      /* Activity 4: Using SessionStorage */
+      /* Task 7: Save User Input to SessionStorage: Create a simple form that saves user input (e.g., name and email) to sessionStorage when submitted.Retrieve and display the saved data on page load. */
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("#sessionStorageForm");
+        const nameInput = document.querySelector("#name");
+        const emailInput = document.querySelector("#email");
+
+        form.addEventListener("submit", () => {
+          const name = nameInput.value;
+          const email = emailInput.value;
+          sessionStorage.setItem("name", name);
+          sessionStorage.setItem("email", email);
+          SessionData();
+        });
+
+        const SessionData = () => {
+          const name = sessionStorage.getItem("name");
+          const email = sessionStorage.getItem("email");
+          if (name && email) {
+            document.querySelector(
+              "#sessionStorageData"
+            ).textContent = `Name: ${name}, Email: ${email}`;
+          }
+        };
+
+        SessionData();
+      });
+
+      /* Task 8: Remove an Item from SessionStorage: Write a script to remove an item from sessionStorage.Log the sessionStorage content before and after removal.*/
+
+      sessionStorage.setItem("itemToRemove", "removed");
+      console.log("Before removal:", sessionStorage.getItem("itemToRemove"));
+      sessionStorage.removeItem("itemToRemove");
+      console.log("After removal:", sessionStorage.getItem("itemToRemove"));
+
+      /* Activity 5: Comparing LocalStorage and SessionStorage */
+      /* Task 9: Save and Retrieve Values from Both Storages: Write a function that accepts a key and a value, and saves the value to both localStorage and sessionStorage.Retrieve and log the values from both storage mechanisms. */
+
+      const Storagestosave = (key, value) => {
+        localStorage.setItem(key, value);
+        sessionStorage.setItem(key, value);
+
+        console.log("LocalStorage:", localStorage.getItem(key));
+        console.log("SessionStorage:", sessionStorage.getItem(key));
+      };
+
+      Storagestosave("name", "John Doe");
+
+      /* Task 10: Clear All Data from Both Storages: Write a function that clears all data from both localStorage and sessionStorage.Verify that both storages are empty. */
+
+      const clearStorages = () => {
+        localStorage.clear();
+        sessionStorage.clear();
+        console.log("LocalStorage cleared:", localStorage.length === 0);
+        console.log("SessionStorage cleared:", sessionStorage.length === 0);
+      };
+
+      clearStorages();
+    </script>
+  </body>
+</html>
