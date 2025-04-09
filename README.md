@@ -35,7 +35,7 @@
 
 #### Post - 17 : <a href= "https://www.linkedin.com/posts/veda-sri-varsha-kura_30daysofcode-webdevelopment-javascript-activity-7285724707243401216-6d5P?utm_source=share&utm_medium=member_desktop"> Link </a>
 
-#### Post - 18-22 : <a href= "https://www.linkedin.com/posts/veda-sri-varsha-kura_30daysofcode-webdevelopment-javascript-activity-7288613453798199298-BMrn?utm_source=share&utm_medium=member_desktop"> Link </a> <a href= "https://lnkd.in/gF9WiXza" > Code </a>
+#### Post - 18-22 : <a href= "https://www.linkedin.com/posts/veda-sri-varsha-kura_openweather-activity-7291040021678080001-bRCp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYlqB0B8Ji5UvynZDp4oPQ1NkSxAAQIjJM"> Link </a> <a href= "https://lnkd.in/gszgN3Uw" > Code </a>
 
 #### Post - 23-26 : <a href = "https://www.linkedin.com/posts/veda-sri-varsha-kura_30daysofjavascript-webdevelopment-gamedev-activity-7307755175815917569-7xip?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFYlqB0B8Ji5UvynZDp4oPQ1NkSxAAQIjJM " > Link </a> <a href = "https://lnkd.in/duHYEd2N" > Code </a>
 
